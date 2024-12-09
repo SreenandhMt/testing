@@ -6,7 +6,9 @@ const Joi = require('joi');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));
+
+
+app.use(cors({ origin: 'http://127.0.0.1:5500',methods: ["GET","POST","DELETE","PUT"],allowedHeaders: ['Content-Type'] }));
 
 app.use(express.json());
 
