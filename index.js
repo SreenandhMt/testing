@@ -5,6 +5,8 @@ const axios = require('axios');
 const Joi = require('joi');
 const express = require('express');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 app.use(express.json());
 
@@ -16,7 +18,7 @@ axios.get(`${url}${apikey}`, {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
     }
-    
+
 }).then(response => {
     console.log(response.status);
     
